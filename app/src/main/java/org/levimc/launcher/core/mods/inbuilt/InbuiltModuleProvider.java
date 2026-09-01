@@ -55,12 +55,6 @@ public final class InbuiltModuleProvider {
         mods.add(create(activity, manager, overlayManager, ModIds.TOGGLE_HUD,
                 R.string.inbuilt_mod_hud, R.string.inbuilt_mod_hud_desc,
                 groupName));
-        mods.add(create(activity, manager, overlayManager, ModIds.AUTO_SPRINT,
-                R.string.inbuilt_mod_autosprint, R.string.inbuilt_mod_autosprint_desc,
-                groupName));
-        mods.add(create(activity, manager, overlayManager, ModIds.CHICK_PET,
-                R.string.inbuilt_mod_chick_pet, R.string.inbuilt_mod_chick_pet_desc,
-                groupName));
         mods.add(create(activity, manager, overlayManager, ModIds.ZOOM,
                 R.string.inbuilt_mod_zoom, R.string.inbuilt_mod_zoom_desc,
                 groupName));
@@ -95,9 +89,10 @@ public final class InbuiltModuleProvider {
     private static UnifiedMod create(Activity activity, InbuiltModManager manager,
                                      InbuiltOverlayManager overlayManager, String id,
                                      int nameRes, int descRes, String groupName) {
+        boolean defaultEnabled = ModIds.FPS_DISPLAY.equals(id) || ModIds.CPS_DISPLAY.equals(id);
         boolean active = overlayManager != null
                 ? overlayManager.isModActive(id)
-                : manager.resolveInbuiltModEnabled(id, false);
+                : manager.resolveInbuiltModEnabled(id, defaultEnabled);
         boolean customConfig = ModIds.POJAV_CONTROLS.equals(id) || ModIds.MORE_BUTTONS.equals(id);
         return new UnifiedMod(
                 id,

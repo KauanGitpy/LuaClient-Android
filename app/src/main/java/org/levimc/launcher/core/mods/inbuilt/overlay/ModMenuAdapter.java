@@ -147,7 +147,7 @@ public class ModMenuAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             title.setLayoutParams(params);
             title.setGravity(Gravity.CENTER_VERTICAL);
             title.setPadding((int) (6 * density), 0, (int) (6 * density), 0);
-            title.setTextColor(0xFF4AE0A0);
+            title.setTextColor(0xFF3D8BFF);
             title.setTextSize(11);
             title.setTypeface(null, Typeface.BOLD);
             title.setSingleLine(true);
@@ -207,6 +207,16 @@ public class ModMenuAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         modHolder.itemView.setOnClickListener(toggleClick);
         modHolder.statusText.setOnClickListener(toggleClick);
         modHolder.icon.setOnClickListener(toggleClick);
+        modHolder.itemView.setOnLongClickListener(v -> {
+            new android.app.AlertDialog.Builder(v.getContext())
+                    .setTitle(mod.getName())
+                    .setMessage(v.getContext().getString(
+                            R.string.lua_module_info_template,
+                            mod.getDescription()))
+                    .setPositiveButton(android.R.string.ok, null)
+                    .show();
+            return true;
+        });
 
         modHolder.favoriteBtn.setOnClickListener(v -> {
             boolean favorite = !favoriteStates.getOrDefault(mod.getStableKey(), false);
@@ -246,7 +256,7 @@ public class ModMenuAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     }
 
     private void updateStatusView(ModViewHolder holder, boolean enabled) {
-        int accent = 0xFF4AE0A0;
+        int accent = 0xFF3D8BFF;
 
         if (enabled) {
             holder.statusText.setText(R.string.mod_status_enabled);

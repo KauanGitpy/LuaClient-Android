@@ -135,7 +135,7 @@
                         android:textSize="11sp"
                         android:textStyle="bold"
                         android:background="@drawable/bg_link_chip_orange"
-                        android:drawableStart="@drawable/ic_patreon"
+                        android:drawableStart="@drawable/ic_youtube"
                         android:drawablePadding="6dp"
                         android:clickable="true"
                         android:focusable="true" />
@@ -153,7 +153,7 @@
                         android:textSize="11sp"
                         android:textStyle="bold"
                         android:background="@drawable/bg_link_chip_pink"
-                        android:drawableStart="@drawable/ic_afdian"
+                        android:drawableStart="@drawable/ic_discord"
                         android:drawablePadding="6dp"
                         android:clickable="true"
                         android:focusable="true" />
@@ -195,7 +195,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="MrPokeG"
+                                android:text="LeviMC Team"
                                 android:fontFamily="@font/misans"
                                 android:textColor="@color/on_surface"
                                 android:textSize="15sp"
@@ -208,7 +208,7 @@
                                 android:layout_marginStart="8dp"
                                 android:paddingHorizontal="8dp"
                                 android:gravity="center"
-                                android:text="@string/maintainer"
+                                android:text="Base open-source"
                                 android:fontFamily="@font/misans"
                                 android:textColor="@color/on_primary"
                                 android:textSize="9sp"
@@ -245,7 +245,7 @@
                         android:textSize="11sp"
                         android:textStyle="bold"
                         android:background="@drawable/bg_link_chip_pink"
-                        android:drawableStart="@drawable/ic_youtube"
+                            android:drawableStart="@drawable/ic_github"
                         android:drawablePadding="6dp"
                         android:clickable="true"
                         android:focusable="true" />

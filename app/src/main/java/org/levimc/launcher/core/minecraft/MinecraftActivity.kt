@@ -18,6 +18,7 @@ import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.widget.AppCompatEditText
 import com.mojang.minecraftpe.MainActivity
 import org.levimc.launcher.core.crash.CrashReporter
+import org.levimc.launcher.core.lua.LuaLogManager
 import org.levimc.launcher.core.mods.ModManager
 import org.levimc.launcher.core.mods.inbuilt.nativemod.PojavControlsMod
 import org.levimc.launcher.core.mods.inbuilt.overlay.InbuiltOverlayManager
@@ -86,6 +87,7 @@ class MinecraftActivity : MainActivity(), PojavControlsHost {
     override fun onCreate(savedInstanceState: Bundle?) {
         trace = LaunchTrace.ensure(intent)
         trace.mark("MinecraftActivity onCreate entered")
+        LuaLogManager.record("minecraft", "Inicio da preparacao do runtime")
         window.setBackgroundDrawable(android.graphics.drawable.ColorDrawable(resolveLaunchBackgroundColor()))
 
         if (savedInstanceState != null) {
@@ -102,20 +104,24 @@ class MinecraftActivity : MainActivity(), PojavControlsHost {
             gameManager = preparedRuntime.gameManager
             configureMinecraftFirebase()
             trace.mark("Prepared runtime consumed")
+            LuaLogManager.record("minecraft", "Runtime oficial preparado")
         } catch (throwable: Throwable) {
             trace.error("MinecraftActivity prepare failed", formatLaunchFailure(throwable))
+            LuaLogManager.record("minecraft", "Falha na preparacao: ${formatLaunchFailure(throwable)}")
             returnToLauncherAfterLaunchFailure()
             return
         }
         trace.mark("Native mod enable started")
         ModManager.enableLoadedMods()
         trace.mark("Native mod enable finished")
+        LuaLogManager.record("modules", "Carregamento de modulos concluido")
         trace.mark("Mojang MainActivity super.onCreate starting")
         try {
             gameRuntimeStarted = true
             super.onCreate(savedInstanceState)
         } catch (throwable: Throwable) {
             trace.error("Mojang MainActivity super.onCreate failed", formatLaunchFailure(throwable))
+            LuaLogManager.record("render", "Falha ao iniciar renderizacao: ${formatLaunchFailure(throwable)}")
             returnToLauncherAfterLaunchFailure()
             return
         }
@@ -130,6 +136,7 @@ class MinecraftActivity : MainActivity(), PojavControlsHost {
         PreloaderInput.setActivity(this)
         MinecraftActivityState.onCreated(this)
         trace.mark("MinecraftActivity onCreate finished")
+        LuaLogManager.record("minecraft", "Jogo iniciado; overlays prontos")
     }
 
 

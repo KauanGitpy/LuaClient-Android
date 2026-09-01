@@ -22,8 +22,8 @@ public final class LauncherNewsMessagingService extends FirebaseMessagingService
             if (title == null) title = message.getNotification().getTitle();
             if (body == null) body = message.getNotification().getBody();
         }
-        if (title == null || title.trim().isEmpty()) title = "LeviLauncher news";
-        if (body == null) body = "Open LeviLauncher to read the latest news.";
+        if (title == null || title.trim().isEmpty()) title = "Lua Client Mobile";
+        if (body == null) body = "Abra o Lua Client Mobile para ler a novidade.";
 
         NewsState.recordPush(this, id, publishedAt);
         NewsRepository.refresh(this, null);

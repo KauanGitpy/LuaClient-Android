@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Common -->
-    <string name="app_name">LeviLauncher</string>
+    <string name="app_name">Lua Client Mobile</string>
     <string name="minecraft">Minecraft</string>
     <string name="launch">Iniciar</string>
     <string name="beta_badge">Beta</string>
@@ -22,10 +22,10 @@
     <string name="mod_reordered">Ordem dos mods atualizada</string>
 
     <!-- About -->
-    <string name="about_title">☕ Sobre</string>
-    <string name="copyright">©2024–2026 LeviMC. Todos os direitos reservados.</string>
+    <string name="about_title">Sobre</string>
+    <string name="copyright">Lua Client Mobile por Kauan · Base LeviLaunchroid sob Apache-2.0.</string>
     <string name="font_license">Este aplicativo usa a fonte Misans.</string>
-    <string name="about_footer_github">GitHub: https://github.com/LiteLDev/LeviLaunchroid</string>
+    <string name="about_footer_github">GitHub: https://github.com/KauanGitpy/LuaClient-Android</string>
     <string name="quick_actions_title">Ações Rápidas</string>
     <string name="content_mgmt_section_title">Gerenciamento de Conteúdo</string>
     <string name="misc_section_title">Diversos</string>
@@ -61,7 +61,7 @@
 
     <!-- Permissions -->
     <string name="storage_permission_title">Permissão para Migração de Armazenamento</string>
-    <string name="storage_permission_message">Conceda permissão de armazenamento para que o LeviLauncher copie os dados do antigo diretório games/org.levimc. Esta permissão é usada apenas na migração.</string>
+    <string name="storage_permission_message">Conceda permissão de armazenamento para que o Lua Client Mobile importe dados do antigo diretório games/org.levimc. Esta permissão é usada apenas na migração.</string>
     <string name="grant_permission">Conceder</string>
     <string name="cancel">Cancelar</string>
 
@@ -159,7 +159,7 @@
     <string name="repair_processing">Extraindo bibliotecas…</string>
     <string name="repair_finalizing">Finalizando reparo…</string>
     <string name="storage_migration_title">Migração de Armazenamento Necessária</string>
-    <string name="storage_migration_message">O LeviLauncher deve migrar os dados de games/org.levimc para %1$s antes de continuar.
+    <string name="storage_migration_message">O Lua Client Mobile deve migrar os dados antigos de games/org.levimc para %1$s antes de continuar.
 
 Essa mudança de armazenamento é necessária para cumprir os requisitos de publicação na Google Play. O diretório antigo será mantido intacto, mas não será mais usado após a migração.
 
@@ -181,11 +181,11 @@ A migração pode demorar. Você pode deixar o app em segundo plano enquanto ela
 
 O diretório antigo games/org.levimc não foi excluído e não é mais usado.</string>
     <string name="storage_migration_partial_title">Migração Incompleta</string>
-    <string name="storage_migration_partial_message">%1$d de %2$d arquivos não puderam ser copiados. A migração deve ser concluída antes que o LeviLauncher continue.</string>
+    <string name="storage_migration_partial_message">%1$d de %2$d arquivos não puderam ser copiados. A migração deve ser concluída antes que o Lua Client Mobile continue.</string>
     <string name="storage_migration_failed_title">Falha na Migração</string>
     <string name="storage_migration_failed_message">A migração não pôde continuar: %1$s
 
-A migração deve ser concluída antes que o LeviLauncher continue.</string>
+A migração deve ser concluída antes que o Lua Client Mobile continue.</string>
     <string name="migration_cleanup_title">Limpar diretório histórico</string>
     <string name="migration_cleanup_desc">Remova o antigo diretório games/org.levimc somente depois de confirmar que todas as instâncias iniciam normalmente e que mundos, pacotes de recursos, pacotes de comportamento e configurações não estão ausentes. Dados históricos excluídos não poderão ser restaurados a partir desse diretório.</string>
     <string name="migration_cleanup_button">Limpar diretório histórico</string>
@@ -210,8 +210,8 @@ A migração deve ser concluída antes que o LeviLauncher continue.</string>
 
     <string name="error_no_browser">Nenhum navegador disponível</string>
 
-    <string name="eula_title">Contrato de Licença LeviLauncher</string>
-    <string name="eula_message"><b>Bem-vindo ao LeviLauncher</b>\n\nAo usar este software, você concorda que:\n\n• Este é um launcher <b>não oficial</b>\n• Você deve possuir uma cópia <b>licenciada</b> do Minecraft\n• Qualquer pirataria ou trapaça é proibida\n• O uso de mods/pacotes é por sua conta e risco\n• Não afiliado à Mojang/Microsoft\n\nO uso contínuo constitui concordância</string>
+    <string name="eula_title">Termos do Lua Client Mobile</string>
+    <string name="eula_message"><b>Bem-vindo ao Lua Client Mobile</b>\n\nAo usar este software, você concorda que:\n\n• Este é um launcher <b>não oficial</b>\n• Você deve possuir uma cópia <b>licenciada</b> do Minecraft\n• O APK original do Minecraft não é distribuído\n• Pirataria, alteração maliciosa de pacotes e trapaças injustas são proibidas\n• Módulos podem ser desativados quando forem incompatíveis\n• Não afiliado à Mojang ou Microsoft\n\nBaseado no LeviLaunchroid sob Apache-2.0.</string>
     <string name="eula_agree">Aceitar</string>
     <string name="eula_exit">Recusar</string>
 
@@ -403,7 +403,7 @@ A migração deve ser concluída antes que o LeviLauncher continue.</string>
     <string name="game_version_select_title">Selecione a Versão do Jogo</string>
     <string name="back">Voltar</string>
 
-    <string name="splash_logo_desc">Logo da folha</string>
+    <string name="splash_logo_desc">Logo da lua do Lua Client</string>
     <string name="minecraft_loading_title">Iniciando Minecraft</string>
     <string name="minecraft_loading_subtitle">Preparando bibliotecas nativas e mods ativados</string>
     <string name="minecraft_loading_status_preparing">Preparando runtime</string>
@@ -439,7 +439,7 @@ A migração deve ser concluída antes que o LeviLauncher continue.</string>
     <string name="ms_active_badge">Ativa</string>
     <string name="ms_account_subtitle_format">ID do Usuário: %1$s • Atualizado: %2$s</string>
     <string name="xbox_avatar">Avatar do Xbox</string>
-    <string name="launcher_managed_mc_login">Entre no Minecraft usando o LeviLauncher</string>
+    <string name="launcher_managed_mc_login">Entre no Minecraft usando o Lua Client Mobile</string>
     <string name="dialog_title_login_required">Login necessário</string>
     <string name="dialog_message_login_required">O login está ativado, mas nenhuma conta está conectada. Vá em Contas para entrar.</string>
     <string name="go_to_accounts">Contas</string>
@@ -449,7 +449,7 @@ A migração deve ser concluída antes que o LeviLauncher continue.</string>
     <string name="label_other_accounts">Outras Contas</string>
 
     <string name="crash_title">O aplicativo falhou</string>
-    <string name="crash_upload">Enviar relatório de falha</string>
+    <string name="crash_upload">Enviar relatório de falha opcional</string>
     <string name="crash_details_title">Detalhes da falha</string>
     <string name="crash_back_to_main">Voltar ao Início</string>
     <string name="crash_share_log">Compartilhar Log</string>
@@ -488,26 +488,26 @@ A migração deve ser concluída antes que o LeviLauncher continue.</string>
     <string name="add">Adicionar</string>
     <string name="remove">Remover</string>
 
-    <string name="inbuilt_mod_quick_drop">Gota Rápida</string>
-    <string name="inbuilt_mod_quick_drop_desc">Jogue itens rapidamente</string>
+    <string name="inbuilt_mod_quick_drop">Quick Drop</string>
+    <string name="inbuilt_mod_quick_drop_desc">Adiciona um botão local configurável para soltar itens. Use confirmação em itens valiosos.</string>
     <string name="inbuilt_mod_camera">Perspectiva Rápida</string>
-    <string name="inbuilt_mod_camera_desc">Mudar a visão da câmera</string>
+    <string name="inbuilt_mod_camera_desc">Altera somente a perspectiva padrão da câmera local.</string>
     <string name="inbuilt_mod_hud">Ocultar HUD</string>
-    <string name="inbuilt_mod_hud_desc">Ocultar a barra e interface</string>
+    <string name="inbuilt_mod_hud_desc">Oculta ou restaura a interface local do Minecraft.</string>
     <string name="inbuilt_mod_autosprint">Auto Sprint</string>
     <string name="inbuilt_mod_autosprint_desc">Ligar/desligar a corrida automática</string>
     <string name="inbuilt_mod_chick_pet">Pintinho de Estimação</string>
     <string name="inbuilt_mod_chick_pet_desc">Um pintinho pixelado que anda e corre ao ser tocado!</string>
     <string name="inbuilt_mod_zoom">Zoom</string>
-    <string name="inbuilt_mod_zoom_desc">Segure para dar zoom, estilo OptiFine</string>
+    <string name="inbuilt_mod_zoom_desc">Zoom visual local sem modificar pacotes enviados ao servidor.</string>
     <string name="zoom_level_label">Nível de Zoom:</string>
     <string name="zoom_keybind_label">Tecla de Zoom:</string>
     <string name="zoom_keybind_press">Pressione qualquer tecla…</string>
     <string name="zoom_keybind_tap_to_change">Toque para mudar</string>
     <string name="inbuilt_mod_fps_display">Mostrar FPS</string>
-    <string name="inbuilt_mod_fps_display_desc">Mostra os quadros por segundo</string>
+    <string name="inbuilt_mod_fps_display_desc">Mostra os quadros por segundo. Ativado por padrão na v0.1.0.</string>
     <string name="inbuilt_mod_cps_display">Mostrar CPS</string>
-    <string name="inbuilt_mod_cps_display_desc">Mostra os cliques por segundo</string>
+    <string name="inbuilt_mod_cps_display_desc">Mostra cliques ou toques por segundo. Ativado por padrão na v0.1.0.</string>
     <string name="inbuilt_mod_snaplook">Snaplook</string>
     <string name="inbuilt_mod_snaplook_desc">Olhe para trás rapidamente (3ª pessoa de frente)</string>
     <string name="inbuilt_mod_virtual_cursor">Cursor Virtual</string>
@@ -644,25 +644,25 @@ A migração deve ser concluída antes que o LeviLauncher continue.</string>
     <string name="vanilla_prefix">Vanilla %s</string>
 
     <string name="about_page_title">Sobre</string>
-    <string name="about_subtitle">LeviLauncher — Um launcher moderno para Minecraft Bedrock</string>
-    <string name="about_authors_title">👥 Autores e Colaboradores</string>
-    <string name="about_author_name">DreamGuXiang</string>
-    <string name="about_author_badge">Autor</string>
-    <string name="about_author_role">Autores do LeviLauncher</string>
-    <string name="about_afdian">Afdian</string>
-    <string name="about_patreon">Patreon</string>
+    <string name="about_subtitle">Lua Client Mobile — Launcher Android para Minecraft Bedrock</string>
+    <string name="about_authors_title">Criador e base open-source</string>
+    <string name="about_author_name">Kauan</string>
+    <string name="about_author_badge">Criador</string>
+    <string name="about_author_role">Criador do Lua Client Mobile</string>
+    <string name="about_afdian">Discord: kauanbl</string>
+    <string name="about_patreon">YouTube</string>
     <string name="about_source_title">Código Fonte e Open Source</string>
-    <string name="about_github_repo">GitHub · LeviLauncher</string>
+    <string name="about_github_repo">GitHub · Lua Client Mobile</string>
     <string name="about_github_org">LiteLDev</string>
-    <string name="about_license_note">Veja LICENSE no repositório para detalhes.</string>
+    <string name="about_license_note">Licença Apache-2.0. Os créditos do LeviLaunchroid e de terceiros permanecem no repositório.</string>
     <string name="about_contribute_title">Contribuir</string>
-    <string name="about_contribute_desc">Contribuições via Issues ou Pull Requests são bem-vindas.</string>
+    <string name="about_contribute_desc">Contribuições via Issues ou Pull Requests são bem-vindas para melhorar o Lua Client Mobile.</string>
     <string name="about_issues">Issue</string>
     <string name="about_star_fork">Dar Estrela / Fazer Fork</string>
 
     <string-array name="launcher_tips">
         <item>As Configurações permitem que você ajuste tema, cor, fundo e outras opções para combinar com você.</item>
-        <item>O LeviLauncher é open source. Use o GitHub para relatar problemas ou sugerir melhorias.</item>
+        <item>O Lua Client Mobile é open source. Use o GitHub para relatar problemas ou sugerir melhorias.</item>
         <item>Use o menu suspenso para alternar a instância atual rapidamente.</item>
         <item>As pessoas realmente leem isso?</item>
         <item>Você pode arrastar os mods para alterar a prioridade de carregamento.</item>
@@ -738,7 +738,7 @@ A migração deve ser concluída antes que o LeviLauncher continue.</string>
     <string name="mod_menu_filter_external">Externos</string>
     <string name="mod_menu_no_favorites">Ainda não há mods favoritos</string>
     <string name="mod_menu_no_matches">Nenhum mod correspondente</string>
-    <string name="mod_menu_group_inbuilt">Recursos integrados</string>
+    <string name="mod_menu_group_inbuilt">Módulos Lua Client</string>
     <string name="mod_menu_group_external_ungrouped">Mods externos sem grupo</string>
     <string name="mod_menu_module_count">%1$d / %2$d</string>
     <string name="mod_menu_general_settings">Configurações gerais</string>
@@ -770,7 +770,7 @@ A migração deve ser concluída antes que o LeviLauncher continue.</string>
     <string name="delete_account_title">Excluir conta</string>
     <string name="delete_account_confirm">Tem certeza de que deseja excluir esta conta?</string>
     <string name="instance_backup_title">Backup da instância</string>
-    <string name="instance_backup_desc">Crie um backup completo desta instância em Download/LeviLauncher/Backups.</string>
+    <string name="instance_backup_desc">Crie um backup completo desta instância em Download/LuaClient-Mobile/Backups.</string>
     <string name="instance_backup_button">Fazer backup da instância</string>
     <string name="instance_backup_confirm_message">Criar um backup completo desta instância agora? Feche o Minecraft primeiro se ele estiver em execução para evitar alterações nos arquivos durante o backup.</string>
     <string name="instance_backup_in_progress">Fazendo backup da instância…</string>
@@ -809,9 +809,9 @@ A migração deve ser concluída antes que o LeviLauncher continue.</string>
     <string name="ms_device_code_login_desc">Abra uma sessão privada do navegador com o código do dispositivo já preenchido.</string>
     <string name="ms_webview_login">Abrir login incorporado</string>
     <string name="ms_webview_option_title">WebView incorporada</string>
-    <string name="ms_webview_login_desc">Entre sem sair do LeviLauncher. Use esta opção quando o fluxo pelo navegador não estiver disponível.</string>
+    <string name="ms_webview_login_desc">Entre sem sair do Lua Client Mobile. Use esta opção quando o fluxo pelo navegador não estiver disponível.</string>
     <string name="ms_device_code_title">Entrar com código do dispositivo</string>
-    <string name="ms_device_code_instructions">Abra a página de login por dispositivo da Microsoft, digite este código e aprove o acesso. O LeviLauncher concluirá automaticamente.</string>
+    <string name="ms_device_code_instructions">Abra a página de login por dispositivo da Microsoft, digite este código e aprove o acesso. O Lua Client Mobile concluirá automaticamente.</string>
     <string name="ms_device_code_label">Código do dispositivo Microsoft</string>
     <string name="ms_device_code_requesting">Solicitando um código seguro…</string>
     <string name="ms_device_code_waiting_code">--------</string>
@@ -825,7 +825,7 @@ A migração deve ser concluída antes que o LeviLauncher continue.</string>
     <string name="ms_device_code_copied">Código copiado</string>
     <string name="ms_device_code_open_browser">Abrir login da Microsoft</string>
     <string name="ms_device_code_step_title">Conclua o login no navegador</string>
-    <string name="ms_device_code_browser_note">O LeviLauncher abre seu navegador padrão em uma sessão privada, preenche o código automaticamente e solicita um novo login da Microsoft.</string>
+    <string name="ms_device_code_browser_note">O Lua Client Mobile abre seu navegador padrão em uma sessão privada, preenche o código automaticamente e solicita um novo login da Microsoft.</string>
     <string name="ms_choose_other_method">Outro método</string>
     <string name="ms_no_browser">Nenhum navegador está disponível neste dispositivo.</string>
     <string name="ms_default_browser_no_private_mode">Seu navegador padrão não oferece suporte a login privado. Atualize-o ou use o login por WebView.</string>
@@ -833,7 +833,7 @@ A migração deve ser concluída antes que o LeviLauncher continue.</string>
     <string name="ms_login_state_failed">Não foi possível verificar a resposta de login da Microsoft. Inicie o login novamente.</string>
     <string name="ms_login_missing_code">A Microsoft não retornou um código de login. Inicie o login novamente ou use o login por Código do dispositivo.</string>
     <string name="ms_feature_disabled_title">Recurso desativado</string>
-    <string name="ms_feature_disabled_desc">Ative “Entrar no Minecraft com LeviLauncher” nas Configurações para gerenciar contas da Microsoft.</string>
+    <string name="ms_feature_disabled_desc">Ative “Entrar no Minecraft com Lua Client Mobile” nas Configurações para gerenciar contas da Microsoft.</string>
     <string name="ms_activated">Ativado</string>
     <string name="inbuilt_mod_gyro">Giroscópio</string>
     <string name="inbuilt_mod_gyro_desc">Use o giroscópio do dispositivo para controlar a rotação da câmera</string>
@@ -957,5 +957,7 @@ A migração deve ser concluída antes que o LeviLauncher continue.</string>
     <!-- Hotbar Slot -->
     <string name="inbuilt_mod_hotbar_slot">Slot da barra rápida</string>
     <string name="inbuilt_mod_hotbar_slot_desc">Adiciona botões separados de 1 a 9 para selecionar slots da barra rápida</string>
+    <string name="lua_export_logs">Exportar logs do Lua Client</string>
+    <string name="lua_module_info_template">%1$s\n\nUso: ative o módulo e use o botão de configurações quando disponível.\n\nRisco: a compatibilidade pode mudar entre versões do Minecraft. Desative o módulo se o jogo apresentar instabilidade.</string>
     <string name="hotbar_slot_content_description">Slot da barra rápida %1$d</string>
 </resources>
