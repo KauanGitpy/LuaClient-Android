@@ -1,4 +1,4 @@
-# Lua Client Mobile v0.1.1 — module status
+# Lua Client Mobile v0.1.2 — module status
 
 This file distinguishes implemented features from planned features. A module must not be presented as working when it has no safe implementation.
 
@@ -18,9 +18,10 @@ This file distinguishes implemented features from planned features. A module mus
 | Controls | Quick Drop | Available | Local button; users should use care with valuable items. |
 | Controls | Virtual cursor, gyro, Pojav controls, more buttons, hotbar shortcuts | Available | Touch-focused controls inherited from the licensed base. |
 | Interface | Search, favorites, module cards, configuration | Available | Every module name has a non-empty fallback. Hold a card for description, usage and risk. |
-| Diagnostics | Local logs/export | Available | Controlled Lua log only; no account credentials. |
+| Compatibility | Android 15 + Minecraft 1.26.45.x | Safe mode | Skips `gxcore` bootstrap and additional native mods after a confirmed launch crash; Java menu and overlays remain available. |
+| Diagnostics | Local logs/export | Available | Lua log plus the latest local native tombstone, when available; no account credentials are collected. |
 
-## Planned but unavailable in v0.1.1
+## Planned but unavailable in v0.1.2
 
 These features require version-specific, tested access to Minecraft runtime state and are intentionally unavailable instead of simulated:
 

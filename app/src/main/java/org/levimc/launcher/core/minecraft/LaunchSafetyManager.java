@@ -22,7 +22,7 @@ public final class LaunchSafetyManager {
     private static final String KEY_VERSION = "minecraft_version";
     private static final String KEY_STAGE = "last_stage";
     private static final String KEY_STARTED_AT = "started_at";
-    private static final int SAFE_DEFAULTS_VERSION = 101;
+    private static final int SAFE_DEFAULTS_VERSION = 102;
 
     private LaunchSafetyManager() {
     }
@@ -53,7 +53,7 @@ public final class LaunchSafetyManager {
         }
 
         prefs.edit().putInt(KEY_SAFE_DEFAULTS_VERSION, SAFE_DEFAULTS_VERSION).apply();
-        LuaLogManager.record("safety", "Modo seguro v0.1.1 aplicado; CPS mantido e hooks nativos desativados");
+        LuaLogManager.record("safety", "Modo seguro v0.1.2 aplicado; CPS mantido e hooks nativos desativados");
     }
 
     public static void markLaunchStarted(Context context, String minecraftVersion) {

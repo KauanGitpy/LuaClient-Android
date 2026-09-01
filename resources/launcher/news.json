@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "items": [
     {
-      "id": "2026-09-01-lua-client-mobile-011",
-      "title": "Lua Client Mobile v0.1.1",
-      "summary": "Modo seguro e diagnostico de inicializacao para corrigir o fechamento na Minecraft 1.26.45.",
+      "id": "2026-09-01-lua-client-mobile-012",
+      "title": "Lua Client Mobile v0.1.2",
+      "summary": "Compatibilidade segura para Android 15 e Minecraft 1.26.45.x apos diagnostico da inicializacao.",
       "publishedAt": "2026-09-01T00:00:00Z",
       "category": "Lua Client",
       "url": "https://github.com/KauanGitpy/LuaClient-Android/releases",

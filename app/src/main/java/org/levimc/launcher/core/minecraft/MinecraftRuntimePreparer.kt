@@ -16,6 +16,9 @@ import org.levimc.launcher.util.LauncherStorage
 import java.io.File
 
 object MinecraftRuntimePreparer {
+    const val EXTRA_COMPATIBILITY_SAFE_MODE =
+        "org.levimc.launcher.extra.COMPATIBILITY_SAFE_MODE"
+
     data class PreparedRuntime(
         val version: GameVersion?,
         val gameManager: GamePackageManager,
@@ -49,6 +52,22 @@ object MinecraftRuntimePreparer {
         listener.onLog("Using ${version.directoryName} (${version.versionCode})")
         trace.mark("Minecraft version resolved", "${version.directoryName} ${version.versionCode}")
 
+        val compatibilitySafeMode = shouldUseGxCoreCompatibilitySafeMode(
+            version.versionCode,
+            Build.VERSION.SDK_INT
+        )
+        launchIntent.putExtra(EXTRA_COMPATIBILITY_SAFE_MODE, compatibilitySafeMode)
+        if (compatibilitySafeMode) {
+            listener.onLog(
+                "Compatibility safe mode enabled: skipping gxcore and additional native mods " +
+                    "on Android ${Build.VERSION.SDK_INT} with Minecraft ${version.versionCode}"
+            )
+            trace.warning(
+                "Compatibility safe mode enabled",
+                "gxcore and additional native mods disabled for Android ${Build.VERSION.SDK_INT} / Minecraft ${version.versionCode}"
+            )
+        }
+
         listener.onProgress(12, "Preparing game files")
         val gameManager = GamePackageManager.getInstance(context.applicationContext, version, trace, null)
         trace.mark("GamePackageManager ready")
@@ -75,24 +94,33 @@ object MinecraftRuntimePreparer {
         trace.mark("Preloader signature rules configured", signatureRulesFile?.absolutePath ?: "<none>")
 
         listener.onLog("Loading native libraries")
-        loadMinecraftLibraries(gameManager, version, listener, trace)
+        loadMinecraftLibraries(gameManager, version, compatibilitySafeMode, listener, trace)
 
         listener.onProgress(78, "Loading enabled mods")
         listener.onLog("Loading native mods")
 
-        try {
-            org.levimc.launcher.core.mods.inbuilt.nativemod.InbuiltModsNative.loadLibrary()
-            val gyroEnabled = InbuiltModManager.getInstance(context)
-                .resolveInbuiltModEnabled(ModIds.GYRO, false)
-            if (gyroEnabled) {
-                org.levimc.launcher.core.mods.inbuilt.nativemod.GyroMod.nativePreResolve()
-            } else {
-                listener.onLog("Skipping disabled gyro native hook")
-            }
-        } catch (_: Throwable) {}
+        val skippedIncompatibleMods = if (compatibilitySafeMode) {
+            listener.onLog("Skipped additional native mods in compatibility safe mode")
+            trace.mark(
+                "Native mod loading skipped",
+                "compatibility safe mode keeps only Java overlays and input bridge"
+            )
+            emptyList()
+        } else {
+            try {
+                org.levimc.launcher.core.mods.inbuilt.nativemod.InbuiltModsNative.loadLibrary()
+                val gyroEnabled = InbuiltModManager.getInstance(context)
+                    .resolveInbuiltModEnabled(ModIds.GYRO, false)
+                if (gyroEnabled) {
+                    org.levimc.launcher.core.mods.inbuilt.nativemod.GyroMod.nativePreResolve()
+                } else {
+                    listener.onLog("Skipping disabled gyro native hook")
+                }
+            } catch (_: Throwable) {}
 
-        //nativeSetupRuntime(modManager.currentVersion?.modsDir?.absolutePath.toString())
-        val skippedIncompatibleMods = loadNativeMods(context, launchIntent, modManager, listener, trace)
+            //nativeSetupRuntime(modManager.currentVersion?.modsDir?.absolutePath.toString())
+            loadNativeMods(context, launchIntent, modManager, listener, trace)
+        }
 
         listener.onProgress(100, "Runtime ready", "Entering Minecraft")
         trace.milestone("Runtime preparation finished")
@@ -182,6 +210,7 @@ object MinecraftRuntimePreparer {
     private fun loadMinecraftLibraries(
         gameManager: GamePackageManager,
         version: GameVersion,
+        compatibilitySafeMode: Boolean,
         listener: ProgressListener,
         trace: LaunchTrace
     ) {
@@ -206,6 +235,11 @@ object MinecraftRuntimePreparer {
                 excludeLibs.add("PlayFabMultiplayer")
                 excludeReasons["PlayFabMultiplayer"] = "not required by this Minecraft version"
             }
+            if (compatibilitySafeMode) {
+                excludeLibs.add("gxcore")
+                excludeReasons["gxcore"] =
+                    "disabled after a confirmed native crash on Android 15 with Minecraft 1.26.45.x"
+            }
             listener.onProgress(56, "Loading native libraries")
             trace.mark("Minecraft native library bundle loading started", "1.21.110+ layout")
             val failedLibraries = gameManager
@@ -226,9 +260,24 @@ object MinecraftRuntimePreparer {
             loadLibrary(gameManager, "fmod", 56, true, listener, trace)
             loadLibrary(gameManager, "MediaDecoders_Android", 62, true, listener, trace)
             loadLibrary(gameManager, "minecraftpe", 70, true, listener, trace)
-            loadLibrary(gameManager, "gxcore", 74, true, listener, trace)
+            if (compatibilitySafeMode) {
+                listener.onLog("Skipped native library: libgxcore.so")
+                trace.mark(
+                    "Native library load skipped",
+                    "libgxcore.so - Android 15 / Minecraft 1.26.45.x compatibility safe mode"
+                )
+            } else {
+                loadLibrary(gameManager, "gxcore", 74, true, listener, trace)
+            }
         }
         trace.mark("Minecraft library loading finished")
+    }
+
+    @JvmStatic
+    fun shouldUseGxCoreCompatibilitySafeMode(versionCode: String?, sdkInt: Int): Boolean {
+        if (sdkInt < Build.VERSION_CODES.VANILLA_ICE_CREAM) return false
+        val normalizedVersion = versionCode?.trim().orEmpty()
+        return normalizedVersion == "1.26.45" || normalizedVersion.startsWith("1.26.45.")
     }
 
     private fun loadLibrary(

@@ -42,8 +42,8 @@ android {
         applicationId "com.kauan.luaclient.mobile"
         minSdkVersion 28
         targetSdkVersion 35
-        versionCode 101
-        versionName "0.1.1"
+        versionCode 102
+        versionName "0.1.2"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         buildConfigField "String", "CURSEFORGE_API_KEY", "\"${localProperties.getProperty('curseforge.api_key', '')}\""
         ndk {
