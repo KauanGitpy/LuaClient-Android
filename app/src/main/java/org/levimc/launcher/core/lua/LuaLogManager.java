@@ -59,7 +59,7 @@ public final class LuaLogManager {
             record("logs", "Exportacao solicitada pelo usuario");
             File shareDir = new File(activity.getCacheDir(), "lua_client_logs_share");
             if (!shareDir.exists()) shareDir.mkdirs();
-            File exportFile = new File(shareDir, "LuaClient-Mobile-v0.1.0-log.txt");
+            File exportFile = new File(shareDir, "LuaClient-Mobile-v0.1.1-log.txt");
             copy(logFile, exportFile);
 
             Uri uri = FileProvider.getUriForFile(

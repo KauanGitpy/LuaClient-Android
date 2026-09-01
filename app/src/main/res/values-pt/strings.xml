@@ -505,9 +505,9 @@ A migração deve ser concluída antes que o Lua Client Mobile continue.</string
     <string name="zoom_keybind_press">Pressione qualquer tecla…</string>
     <string name="zoom_keybind_tap_to_change">Toque para mudar</string>
     <string name="inbuilt_mod_fps_display">Mostrar FPS</string>
-    <string name="inbuilt_mod_fps_display_desc">Mostra os quadros por segundo. Ativado por padrão na v0.1.0.</string>
+    <string name="inbuilt_mod_fps_display_desc">Mostra os quadros por segundo. Desativado por padrão enquanto a compatibilidade nativa é validada em cada versão do Minecraft.</string>
     <string name="inbuilt_mod_cps_display">Mostrar CPS</string>
-    <string name="inbuilt_mod_cps_display_desc">Mostra cliques ou toques por segundo. Ativado por padrão na v0.1.0.</string>
+    <string name="inbuilt_mod_cps_display_desc">Mostra cliques ou toques por segundo. Ativado por padrão.</string>
     <string name="inbuilt_mod_snaplook">Snaplook</string>
     <string name="inbuilt_mod_snaplook_desc">Olhe para trás rapidamente (3ª pessoa de frente)</string>
     <string name="inbuilt_mod_virtual_cursor">Cursor Virtual</string>
@@ -959,5 +959,7 @@ A migração deve ser concluída antes que o Lua Client Mobile continue.</string
     <string name="inbuilt_mod_hotbar_slot_desc">Adiciona botões separados de 1 a 9 para selecionar slots da barra rápida</string>
     <string name="lua_export_logs">Exportar logs do Lua Client</string>
     <string name="lua_module_info_template">%1$s\n\nUso: ative o módulo e use o botão de configurações quando disponível.\n\nRisco: a compatibilidade pode mudar entre versões do Minecraft. Desative o módulo se o jogo apresentar instabilidade.</string>
+    <string name="lua_recovered_crash_title">A inicialização anterior do Minecraft falhou</string>
+    <string name="lua_continue_safe_mode">Continuar em modo seguro</string>
     <string name="hotbar_slot_content_description">Slot da barra rápida %1$d</string>
 </resources>

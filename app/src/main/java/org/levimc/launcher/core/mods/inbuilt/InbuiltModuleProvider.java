@@ -89,7 +89,7 @@ public final class InbuiltModuleProvider {
     private static UnifiedMod create(Activity activity, InbuiltModManager manager,
                                      InbuiltOverlayManager overlayManager, String id,
                                      int nameRes, int descRes, String groupName) {
-        boolean defaultEnabled = ModIds.FPS_DISPLAY.equals(id) || ModIds.CPS_DISPLAY.equals(id);
+        boolean defaultEnabled = ModIds.CPS_DISPLAY.equals(id);
         boolean active = overlayManager != null
                 ? overlayManager.isModActive(id)
                 : manager.resolveInbuiltModEnabled(id, defaultEnabled);

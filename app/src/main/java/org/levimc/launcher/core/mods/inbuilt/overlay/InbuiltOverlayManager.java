@@ -127,7 +127,7 @@ public class InbuiltOverlayManager {
     }
 
     private void restorePersistedInbuiltModState(InbuiltModManager manager, String modId) {
-        boolean defaultEnabled = ModIds.FPS_DISPLAY.equals(modId) || ModIds.CPS_DISPLAY.equals(modId);
+        boolean defaultEnabled = ModIds.CPS_DISPLAY.equals(modId);
         if (manager.resolveInbuiltModEnabled(modId, defaultEnabled)) {
             handleModToggle(modId, true);
         }

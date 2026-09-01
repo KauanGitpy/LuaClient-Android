@@ -1,4 +1,4 @@
-# Lua Client Mobile v0.1.0 — module status
+# Lua Client Mobile v0.1.1 — module status
 
 This file distinguishes implemented features from planned features. A module must not be presented as working when it has no safe implementation.
 
@@ -10,7 +10,7 @@ This file distinguishes implemented features from planned features. A module mus
 | Launcher | Version selection/isolation | Available | Unsupported or invalid imports show the upstream validation error. |
 | Account | Microsoft/Xbox Live | Preserved | No Lua Client password or token collection was added. |
 | Native core | `libLuaClient.so` | Available | ARM64 core with initialization and diagnostic metadata; no Windows/DirectX hooks. |
-| HUD | FPS | Available | Enabled by default; movable and configurable. |
+| HUD | FPS | Compatibility-limited | Disabled by default and blocked on Minecraft 1.26.45 until its native hook is validated. |
 | HUD | CPS/touch count | Available | Enabled by default; movable and configurable. |
 | HUD | HUD editor | Available | Move/reset supported overlay elements. |
 | Visual | Zoom | Available | Local visual control only. |
@@ -20,7 +20,7 @@ This file distinguishes implemented features from planned features. A module mus
 | Interface | Search, favorites, module cards, configuration | Available | Every module name has a non-empty fallback. Hold a card for description, usage and risk. |
 | Diagnostics | Local logs/export | Available | Controlled Lua log only; no account credentials. |
 
-## Planned but unavailable in v0.1.0
+## Planned but unavailable in v0.1.1
 
 These features require version-specific, tested access to Minecraft runtime state and are intentionally unavailable instead of simulated:
 

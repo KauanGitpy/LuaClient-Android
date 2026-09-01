@@ -7,7 +7,7 @@
 
 namespace {
 constexpr const char* kLogTag = "LuaClientNative";
-constexpr const char* kVersion = "0.1.0";
+constexpr const char* kVersion = "0.1.1";
 constexpr const char* kArchitecture = "arm64-v8a";
 
 std::atomic_bool gInitialized{false};
@@ -43,7 +43,7 @@ Java_org_levimc_launcher_core_lua_LuaNativeBridge_nativeInitialize(
     env->ReleaseStringUTFChars(dataDirectory, rawDirectory);
 
     gInitialized.store(true, std::memory_order_release);
-    logInfo("Lua Client Mobile native core v0.1.0 inicializado");
+    logInfo("Lua Client Mobile native core v0.1.1 inicializado");
     return JNI_TRUE;
 }
 

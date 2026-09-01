@@ -1,22 +1,22 @@
 {
   "schemaVersion": 1,
-  "headline": "Lua Client Mobile v0.1.0",
-  "summary": "Primeiro MVP Android com identidade Lua Client, nucleo ARM64 e HUD seguro.",
+  "headline": "Lua Client Mobile v0.1.1",
+  "summary": "Correcao de inicializacao e diagnostico para Minecraft 1.26.45.",
   "sections": [
     {
-      "title": "MVP",
+      "title": "Correcoes",
       "items": [
         {
-          "text": "Adicionada a identidade visual azul-escuro do Lua Client Mobile."
+          "text": "Adicionado modo seguro que desativa hooks nativos antes do primeiro teste."
         },
         {
-          "text": "Incluido o nucleo nativo libLuaClient.so para ARM64-v8a."
+          "text": "O hook de giroscopio agora so e preparado quando o modulo estiver ativado."
         },
         {
-          "text": "FPS, CPS/toques, menu por cards, pesquisa, favoritos e editor de HUD disponiveis."
+          "text": "O FPS nativo foi bloqueado na Minecraft 1.26.45 ate validacao em aparelho."
         },
         {
-          "text": "Logs locais podem ser exportados sem incluir credenciais da conta."
+          "text": "As etapas de inicializacao agora ficam salvas e o fechamento inesperado e recuperado na proxima abertura."
         }
       ]
     }

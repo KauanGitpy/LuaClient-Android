@@ -643,9 +643,9 @@ Migration must complete before Lua Client Mobile can continue.</string>
     <string name="zoom_keybind_press">Press any key…</string>
     <string name="zoom_keybind_tap_to_change">Tap to change</string>
     <string name="inbuilt_mod_fps_display">FPS Display</string>
-    <string name="inbuilt_mod_fps_display_desc">Shows current frames per second. Enabled by default in v0.1.0.</string>
+    <string name="inbuilt_mod_fps_display_desc">Shows current frames per second. Disabled by default while native compatibility is validated for each Minecraft version.</string>
     <string name="inbuilt_mod_cps_display">CPS Display</string>
-    <string name="inbuilt_mod_cps_display_desc">Shows local clicks or touches per second. Enabled by default in v0.1.0.</string>
+    <string name="inbuilt_mod_cps_display_desc">Shows local clicks or touches per second. Enabled by default.</string>
     <string name="inbuilt_mod_snaplook">Snaplook</string>
     <string name="inbuilt_mod_snaplook_desc">Hold to quickly look behind you (third person front)</string>
     <string name="inbuilt_mod_virtual_cursor">Virtual Cursor</string>
@@ -1026,4 +1026,6 @@ Migration must complete before Lua Client Mobile can continue.</string>
     <string name="news_notification_channel_description">Lua Client Mobile announcements and important notices</string>
     <string name="lua_export_logs">Export Lua Client logs</string>
     <string name="lua_module_info_template">%1$s\n\nUsage: enable the module and use the settings button when available.\n\nRisk: compatibility may change between Minecraft versions. Disable the module if the game becomes unstable.</string>
+    <string name="lua_recovered_crash_title">Previous Minecraft launch failed</string>
+    <string name="lua_continue_safe_mode">Continue in safe mode</string>
 </resources>

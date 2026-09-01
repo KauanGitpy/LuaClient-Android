@@ -15,6 +15,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import org.levimc.launcher.R;
+import org.levimc.launcher.core.lua.LuaLogManager;
 import org.levimc.launcher.core.mods.inbuilt.manager.InbuiltModManager;
 import org.levimc.launcher.core.mods.inbuilt.model.ModIds;
 import org.levimc.launcher.core.mods.inbuilt.nativemod.FpsMod;
@@ -64,6 +65,11 @@ public class FpsDisplayOverlay {
     }
 
     private void initializeNative() {
+        String minecraftVersion = activity.getIntent().getStringExtra("MINECRAFT_VERSION");
+        if (minecraftVersion != null && minecraftVersion.startsWith("1.26.45")) {
+            LuaLogManager.record("safety", "FPS nativo bloqueado na Minecraft 1.26.45 ate validacao de compatibilidade");
+            return;
+        }
         handler.postDelayed(() -> {
             if (FpsMod.init()) {
                 initialized = true;

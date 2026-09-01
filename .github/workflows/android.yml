@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-      - codex/lua-client-mobile-v0.1.0
+      - codex/lua-client-mobile-v0.1.1
   pull_request:
     branches:
       - main
@@ -22,9 +22,9 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 60
     env:
-      VERSION_NAME: "0.1.0"
-      VERSION_TAG: "v0.1.0"
-      APK_NAME: "LuaClient-Mobile-v0.1.0-arm64.apk"
+      VERSION_NAME: "0.1.1"
+      VERSION_TAG: "v0.1.1"
+      APK_NAME: "LuaClient-Mobile-v0.1.1-arm64.apk"
 
     steps:
       - name: Checkout source and submodules
@@ -124,9 +124,9 @@ jobs:
             echo "version=${VERSION_NAME}"
             echo "min_android=9 (API 28)"
             echo "architecture=arm64-v8a"
-            echo "minecraft_tested=Device validation pending"
+            echo "minecraft_tested=1.26.45 on Redmi 13C: v0.1.0 crash reported; v0.1.1 safe-mode retest pending"
           } >> apk-metadata.txt
-          git archive --format=zip --output "LuaClient-Mobile-v0.1.0-source.zip" HEAD
+          git archive --format=zip --output "LuaClient-Mobile-v0.1.1-source.zip" HEAD
 
       - name: Prepare license files
         run: |
@@ -137,12 +137,12 @@ jobs:
       - name: Upload CI package
         uses: actions/upload-artifact@v4
         with:
-          name: LuaClient-Mobile-v0.1.0-arm64
+          name: LuaClient-Mobile-v0.1.1-arm64
           path: |
             ${{ env.APK_NAME }}
             ${{ env.APK_NAME }}.sha256
             apk-metadata.txt
-            LuaClient-Mobile-v0.1.0-source.zip
+            LuaClient-Mobile-v0.1.1-source.zip
             LuaClient-Mobile-Apache-2.0-LICENSE.txt
             LuaClient-Mobile-NOTICE.txt
             LuaClient-Mobile-THIRD-PARTY-NOTICES.md
@@ -156,8 +156,8 @@ jobs:
     permissions:
       contents: write
     env:
-      VERSION_TAG: "v0.1.0"
-      APK_NAME: "LuaClient-Mobile-v0.1.0-arm64.apk"
+      VERSION_TAG: "v0.1.1"
+      APK_NAME: "LuaClient-Mobile-v0.1.1-arm64.apk"
     steps:
       - name: Checkout release metadata
         uses: actions/checkout@v4
@@ -165,7 +165,7 @@ jobs:
       - name: Download verified build package
         uses: actions/download-artifact@v4
         with:
-          name: LuaClient-Mobile-v0.1.0-arm64
+          name: LuaClient-Mobile-v0.1.1-arm64
           path: release-package
 
       - name: Create permanent GitHub Release
@@ -181,7 +181,7 @@ jobs:
             "release-package/${APK_NAME}" \
             "release-package/${APK_NAME}.sha256" \
             release-package/apk-metadata.txt \
-            release-package/LuaClient-Mobile-v0.1.0-source.zip \
+            release-package/LuaClient-Mobile-v0.1.1-source.zip \
             release-package/LuaClient-Mobile-Apache-2.0-LICENSE.txt \
             release-package/LuaClient-Mobile-NOTICE.txt \
             release-package/LuaClient-Mobile-THIRD-PARTY-NOTICES.md \

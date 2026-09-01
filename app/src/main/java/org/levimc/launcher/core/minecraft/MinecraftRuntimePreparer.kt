@@ -7,6 +7,8 @@ import android.os.Build
 import org.levimc.launcher.core.mods.Mod
 import org.levimc.launcher.core.mods.ModManager
 import org.levimc.launcher.core.mods.ModNativeLoader
+import org.levimc.launcher.core.mods.inbuilt.manager.InbuiltModManager
+import org.levimc.launcher.core.mods.inbuilt.model.ModIds
 import org.levimc.launcher.core.versions.GameVersion
 import org.levimc.launcher.preloader.PreloaderInput
 import org.levimc.launcher.preloader.PreloaderSignatureRulesManager
@@ -80,7 +82,13 @@ object MinecraftRuntimePreparer {
 
         try {
             org.levimc.launcher.core.mods.inbuilt.nativemod.InbuiltModsNative.loadLibrary()
-            org.levimc.launcher.core.mods.inbuilt.nativemod.GyroMod.nativePreResolve()
+            val gyroEnabled = InbuiltModManager.getInstance(context)
+                .resolveInbuiltModEnabled(ModIds.GYRO, false)
+            if (gyroEnabled) {
+                org.levimc.launcher.core.mods.inbuilt.nativemod.GyroMod.nativePreResolve()
+            } else {
+                listener.onLog("Skipping disabled gyro native hook")
+            }
         } catch (_: Throwable) {}
 
         //nativeSetupRuntime(modManager.currentVersion?.modsDir?.absolutePath.toString())

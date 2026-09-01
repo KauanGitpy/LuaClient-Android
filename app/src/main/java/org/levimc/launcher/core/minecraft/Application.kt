@@ -33,6 +33,8 @@ class LauncherApplication : Application() {
         val processName = Application.getProcessName()
         if (processName.endsWith(":crash")) return
 
+        LaunchSafetyManager.applyVersionSafeDefaults(this)
+
         NewsNotificationHelper.initialize(this)
         LogcatOverlayManager.init(this)
 
