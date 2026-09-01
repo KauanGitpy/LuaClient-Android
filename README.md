@@ -11,7 +11,7 @@ Cliente/launcher Android para Minecraft Bedrock, criado por **Kauan** e baseado 
 - Núcleo nativo `libLuaClient.so`
 - Menu de módulos adaptado para toque
 
-## Estado da v0.1.0
+## Estado da v0.1.1
 
 O MVP mantém o fluxo do LeviLaunchroid para importar e iniciar o Minecraft oficial. O Lua Client acrescenta identidade própria, núcleo ARM64, logs locais exportáveis e usa os módulos seguros já disponíveis na base:
 

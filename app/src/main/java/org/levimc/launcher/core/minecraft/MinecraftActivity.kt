@@ -37,6 +37,11 @@ class MinecraftActivity : MainActivity(), PojavControlsHost {
     private var gameRuntimeStarted = false
     private var preloaderTextInput: PreloaderTextInput? = null
     private var previousInputFocus: View? = null
+    private val stableLaunchRunnable = Runnable {
+        if (!isFinishing && !isDestroyed) {
+            LaunchSafetyManager.markStable(this)
+        }
+    }
 
     private class PreloaderTextInput(context: Context) : AppCompatEditText(context) {
         override fun onCreateInputConnection(outAttrs: EditorInfo): InputConnection? {
@@ -88,6 +93,7 @@ class MinecraftActivity : MainActivity(), PojavControlsHost {
         trace = LaunchTrace.ensure(intent)
         trace.mark("MinecraftActivity onCreate entered")
         LuaLogManager.record("minecraft", "Inicio da preparacao do runtime")
+        LaunchSafetyManager.markStage(this, "MinecraftActivity iniciada")
         window.setBackgroundDrawable(android.graphics.drawable.ColorDrawable(resolveLaunchBackgroundColor()))
 
         if (savedInstanceState != null) {
@@ -126,6 +132,7 @@ class MinecraftActivity : MainActivity(), PojavControlsHost {
             return
         }
         trace.mark("Mojang MainActivity super.onCreate finished")
+        LaunchSafetyManager.markStage(this, "renderizacao do Minecraft iniciada")
 
         val launchVertically = intent.getBooleanExtra("LAUNCH_VERTICALLY", false)
         if (launchVertically) {
@@ -205,6 +212,8 @@ class MinecraftActivity : MainActivity(), PojavControlsHost {
 
     override fun onResume() {
         super.onResume()
+        window.decorView.removeCallbacks(stableLaunchRunnable)
+        window.decorView.postDelayed(stableLaunchRunnable, 12000L)
         if (!isFinishing) {
             normalExitPrepared = false
             normalExitRestartScheduled = false
@@ -368,6 +377,7 @@ class MinecraftActivity : MainActivity(), PojavControlsHost {
     }
 
     override fun onPause() {
+        window.decorView.removeCallbacks(stableLaunchRunnable)
         val shouldRestartAfterNormalExit = shouldRestartAfterNormalExit()
         if (shouldRestartAfterNormalExit) {
             ModManager.disableAndUnloadLoadedMods()
@@ -379,6 +389,7 @@ class MinecraftActivity : MainActivity(), PojavControlsHost {
     }
 
     override fun onDestroy() {
+        window.decorView.removeCallbacks(stableLaunchRunnable)
         ModManager.disableAndUnloadLoadedMods()
         val shouldPrepareNormalExit = shouldRestartAfterNormalExit()
         if (shouldPrepareNormalExit) {

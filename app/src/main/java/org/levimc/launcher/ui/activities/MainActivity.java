@@ -34,6 +34,7 @@ import androidx.lifecycle.ViewModelProvider;
 import org.levimc.launcher.R;
 import org.levimc.launcher.core.minecraft.MinecraftImportIntents;
 import org.levimc.launcher.core.minecraft.LaunchTrace;
+import org.levimc.launcher.core.minecraft.LaunchSafetyManager;
 import org.levimc.launcher.core.minecraft.MinecraftLauncher;
 import org.levimc.launcher.core.lua.LuaLogManager;
 import org.levimc.launcher.core.mods.FileHandler;
@@ -188,6 +189,20 @@ import okhttp3.OkHttpClient;
 
         initAccountHeader();
         binding.getRoot().post(this::showPostEulaFlow);
+        binding.getRoot().postDelayed(this::showRecoveredLaunchWarning, 1800L);
+    }
+
+    private void showRecoveredLaunchWarning() {
+        if (isFinishing() || isDestroyed()) return;
+        String report = LaunchSafetyManager.consumeUnexpectedExitReport(this);
+        if (report == null || report.isEmpty()) return;
+
+        new androidx.appcompat.app.AlertDialog.Builder(this)
+                .setTitle(R.string.lua_recovered_crash_title)
+                .setMessage(report)
+                .setPositiveButton(R.string.lua_export_logs, (dialog, which) -> LuaLogManager.share(this))
+                .setNegativeButton(R.string.lua_continue_safe_mode, null)
+                .show();
     }
 
     @Override

@@ -22,6 +22,7 @@ import android.widget.ScrollView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import org.levimc.launcher.R
+import org.levimc.launcher.core.lua.LuaLogManager
 import org.levimc.launcher.ui.activities.BaseActivity
 import org.levimc.launcher.ui.dialogs.CustomAlertDialog
 import org.levimc.launcher.util.PersonalizationManager
@@ -57,6 +58,10 @@ class MinecraftLoadingActivity : BaseActivity(), MinecraftRuntimePreparer.Progre
         super.onCreate(savedInstanceState)
         trace = LaunchTrace.ensure(intent)
         trace.mark("MinecraftLoadingActivity onCreate")
+        val launchVersion = MinecraftRuntimePreparer.resolveGameVersion(intent)?.versionCode
+            ?: intent.getStringExtra("MINECRAFT_VERSION")
+            ?: "desconhecida"
+        LaunchSafetyManager.markLaunchStarted(this, launchVersion)
         applyLaunchOrientation()
         hideSystemUi()
         window.decorView.setOnSystemUiVisibilityChangeListener {
@@ -183,6 +188,8 @@ class MinecraftLoadingActivity : BaseActivity(), MinecraftRuntimePreparer.Progre
     private fun appendLog(message: String) {
         if (isFinishing || isDestroyed) return
         if (message == lastLogMessage) return
+        LuaLogManager.record("launch", message)
+        LaunchSafetyManager.markStage(this, message)
         val timestamp = timeFormat.format(Date())
         lastLogMessage = message
         visibleLogMessages.addLast("[$timestamp] ${trace.formatForUi(message)}")
@@ -203,6 +210,7 @@ class MinecraftLoadingActivity : BaseActivity(), MinecraftRuntimePreparer.Progre
         trace.error("Launch failed", message)
         appendLog("Launch failed")
         appendLog(message)
+        LaunchSafetyManager.markHandledFailure(this, message)
         returnButton.visibility = View.VISIBLE
     }
 
@@ -314,6 +322,7 @@ class MinecraftLoadingActivity : BaseActivity(), MinecraftRuntimePreparer.Progre
     private fun returnToLauncher() {
         if (returningToLauncher) return
         returningToLauncher = true
+        LaunchSafetyManager.markHandledFailure(this, "inicializacao cancelada pelo usuario")
 
         MinecraftLaunchSession.clear()
         MinecraftProcessRestarter.restartLauncherAfterMinecraftExit(this)

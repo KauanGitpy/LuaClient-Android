@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "items": [
     {
-      "id": "2026-09-01-lua-client-mobile-010",
-      "title": "Lua Client Mobile v0.1.0",
-      "summary": "Primeiro MVP Android com launcher, nucleo ARM64, FPS, CPS, Zoom, Quick Drop, menu touch e editor de HUD.",
+      "id": "2026-09-01-lua-client-mobile-011",
+      "title": "Lua Client Mobile v0.1.1",
+      "summary": "Modo seguro e diagnostico de inicializacao para corrigir o fechamento na Minecraft 1.26.45.",
       "publishedAt": "2026-09-01T00:00:00Z",
       "category": "Lua Client",
       "url": "https://github.com/KauanGitpy/LuaClient-Android/releases",
