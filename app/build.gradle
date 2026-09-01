@@ -39,11 +39,11 @@ android {
     namespace 'org.levimc.launcher'
     compileSdkVersion 36
     defaultConfig {
-        applicationId "org.levimc.launcher"
+        applicationId "com.kauan.luaclient.mobile"
         minSdkVersion 28
         targetSdkVersion 35
-        versionCode getVersionCodeByTimestamp()
-        versionName getGitTag()
+        versionCode 100
+        versionName "0.1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         buildConfigField "String", "CURSEFORGE_API_KEY", "\"${localProperties.getProperty('curseforge.api_key', '')}\""
         ndk {
@@ -102,7 +102,7 @@ android {
                 mappingFileUploadEnabled false
                 nativeSymbolUploadEnabled true
             }
-            resValue "string", "app_name", "LeviLauncher Beta"
+            resValue "string", "app_name", "Lua Client Mobile Beta"
             buildConfigField "boolean", "IS_BETA", "true"
             matchingFallbacks = ["release"]
             ndk {

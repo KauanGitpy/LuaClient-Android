@@ -26,7 +26,7 @@ public class ModConfigView {
     public static void render(Context context, ViewGroup container, UnifiedMod mod, Runnable onConfigChanged) {
         container.removeAllViews();
         float density = context.getResources().getDisplayMetrics().density;
-        int accent = 0xFF4AE0A0;
+        int accent = 0xFF3D8BFF;
 
         renderConfigEntries(context, container, mod, accent, density, onConfigChanged);
     }

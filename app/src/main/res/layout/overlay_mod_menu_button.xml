@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/bg_mod_menu_fab"
-        android:src="@drawable/ic_leaf_logo"
+        android:src="@drawable/ic_lua_moon"
         android:padding="7dp"
         android:scaleType="fitCenter" />
 

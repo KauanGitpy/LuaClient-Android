@@ -47,8 +47,8 @@ public class UnifiedMod {
         public ConfigEntry(String key, String displayName, ConfigType type,
                            String defaultValue, String minValue, String maxValue,
                            String currentValue, String dependsOn) {
-            this.key = key;
-            this.displayName = displayName;
+            this.key = normalizeGroupValue(key, "unnamed-setting");
+            this.displayName = normalizeGroupValue(displayName, this.key);
             this.type = type;
             this.defaultValue = defaultValue;
             this.minValue = minValue;
@@ -86,13 +86,13 @@ public class UnifiedMod {
                       boolean forceHasConfig, String groupId, String groupName,
                       EnabledHandler enabledHandler, ConfigHandler configHandler,
                       ConfigOpenHandler configOpenHandler) {
-        this.id = id;
-        this.name = name;
-        this.description = description;
+        this.id = normalizeGroupValue(id, "unknown-module");
+        this.name = normalizeGroupValue(name, this.id);
+        this.description = normalizeGroupValue(description, "No description provided by this module.");
         this.modId = modId;
         this.groupId = normalizeGroupValue(groupId, defaultGroupId(source, modId));
         this.groupName = normalizeGroupValue(groupName, defaultGroupName(source, modId));
-        this.stableKey = source.name().toLowerCase(Locale.US) + ":" + id;
+        this.stableKey = source.name().toLowerCase(Locale.US) + ":" + this.id;
         this.source = source;
         this.enabled = enabled;
         this.configEntries = configEntries != null ? configEntries : Collections.emptyList();

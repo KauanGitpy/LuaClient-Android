@@ -1,13 +1,22 @@
 {
   "schemaVersion": 1,
-  "headline": "HUD Editor Fix",
-  "summary": "This update fixes a regression that prevented the HUD Editor from opening correctly.",
+  "headline": "Lua Client Mobile v0.1.0",
+  "summary": "Primeiro MVP Android com identidade Lua Client, nucleo ARM64 e HUD seguro.",
   "sections": [
     {
-      "title": "Fixes",
+      "title": "MVP",
       "items": [
         {
-          "text": "Fixed an issue where opening the HUD Editor would close the editor and return to the game instead."
+          "text": "Adicionada a identidade visual azul-escuro do Lua Client Mobile."
+        },
+        {
+          "text": "Incluido o nucleo nativo libLuaClient.so para ARM64-v8a."
+        },
+        {
+          "text": "FPS, CPS/toques, menu por cards, pesquisa, favoritos e editor de HUD disponiveis."
+        },
+        {
+          "text": "Logs locais podem ser exportados sem incluir credenciais da conta."
         }
       ]
     }

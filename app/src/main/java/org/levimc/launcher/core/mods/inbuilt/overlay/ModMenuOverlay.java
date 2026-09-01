@@ -150,7 +150,7 @@ public class ModMenuOverlay {
     }
 
     private int getAccentColor() {
-        return 0xFF4AE0A0;
+        return 0xFF3D8BFF;
     }
     
     public interface ModMenuCallback {
@@ -938,7 +938,7 @@ public class ModMenuOverlay {
         view.setAlpha(1f);
         Drawable background = view.getBackground();
         if (background != null) {
-            background.mutate().setTint(selected ? 0x334AE0A0 : 0xFF24282C);
+            background.mutate().setTint(selected ? 0x333D8BFF : 0xFF24282C);
         }
     }
 

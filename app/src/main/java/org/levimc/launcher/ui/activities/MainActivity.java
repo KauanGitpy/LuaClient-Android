@@ -35,6 +35,7 @@ import org.levimc.launcher.R;
 import org.levimc.launcher.core.minecraft.MinecraftImportIntents;
 import org.levimc.launcher.core.minecraft.LaunchTrace;
 import org.levimc.launcher.core.minecraft.MinecraftLauncher;
+import org.levimc.launcher.core.lua.LuaLogManager;
 import org.levimc.launcher.core.mods.FileHandler;
 import org.levimc.launcher.core.mods.Mod;
 import org.levimc.launcher.core.mods.inbuilt.manager.InbuiltModManager;
@@ -169,7 +170,7 @@ import okhttp3.OkHttpClient;
         setupNavBar();
         setupManagersAndHandlers();
         if (!isInstanceShortcutIntent()) {
-            new GithubReleaseUpdater(this, "LiteLDev", "LeviLaunchroid", permissionResultLauncher).checkUpdateOnLaunch();
+            new GithubReleaseUpdater(this, "KauanGitpy", "LuaClient-Android", permissionResultLauncher).checkUpdateOnLaunch();
         }
         showEulaIfNeeded();
         setupOnBackPressedCallback();
@@ -1168,6 +1169,7 @@ import okhttp3.OkHttpClient;
         binding.miscCurseforgeRow.setOnClickListener(v -> startActivity(new Intent(this, CurseForgeActivity.class)));
         binding.miscAccountsRow.setOnClickListener(v -> startActivity(new Intent(this, AccountsActivity.class)));
         binding.miscQuickLaunchRow.setOnClickListener(v -> startActivity(new Intent(this, QuickLaunchActivity.class)));
+        binding.miscExportLogsRow.setOnClickListener(v -> LuaLogManager.share(this));
     }
 
     private void openModsFullscreen() {

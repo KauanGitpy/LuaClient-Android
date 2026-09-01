@@ -19,7 +19,7 @@ import org.levimc.launcher.R;
 import org.levimc.launcher.ui.activities.NewsActivity;
 
 public final class NewsNotificationHelper {
-    public static final String TOPIC = "levilauncher-news";
+    public static final String TOPIC = "lua-client-mobile-news";
     public static final String CHANNEL_ID = "launcher_news";
 
     private NewsNotificationHelper() {

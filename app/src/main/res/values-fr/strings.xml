@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Common -->
-    <string name="app_name">LeviLauncher</string>
+    <string name="app_name">Lua Client Mobile</string>
     <string name="minecraft">Minecraft</string>
     <string name="launch">Lancer</string>
     <string name="beta_badge">Bêta</string>
@@ -25,7 +25,7 @@
     <string name="about_title">☕ À propos</string>
     <string name="copyright">©2024–2026 LeviMC. Tous droits réservés.</string>
     <string name="font_license">Cette application utilise la police Misans.</string>
-    <string name="about_footer_github">GitHub : https://github.com/LiteLDev/LeviLaunchroid</string>
+    <string name="about_footer_github">GitHub : https://github.com/KauanGitpy/LuaClient-Android</string>
     <string name="quick_actions_title">Actions rapides</string>
     <string name="content_mgmt_section_title">Gestion de contenu</string>
     <string name="misc_section_title">Divers</string>
@@ -61,7 +61,7 @@
 
     <!-- Permissions -->
     <string name="storage_permission_title">Autorisation de migration du stockage</string>
-    <string name="storage_permission_message">Veuillez accorder l’autorisation de stockage afin que LeviLauncher puisse copier les données depuis l’ancien dossier games/org.levimc. Cette autorisation n’est utilisée que pour la migration.</string>
+    <string name="storage_permission_message">Veuillez accorder l’autorisation de stockage afin que Lua Client Mobile puisse copier les données depuis l’ancien dossier games/org.levimc. Cette autorisation n’est utilisée que pour la migration.</string>
     <string name="grant_permission">Accorder</string>
     <string name="cancel">Annuler</string>
 
@@ -159,7 +159,7 @@
     <string name="repair_processing">Extraction des bibliothèques…</string>
     <string name="repair_finalizing">Finalisation de la réparation…</string>
     <string name="storage_migration_title">Migration du stockage requise</string>
-    <string name="storage_migration_message">LeviLauncher doit migrer les données de games/org.levimc vers %1$s avant de continuer.
+    <string name="storage_migration_message">Lua Client Mobile doit migrer les données de games/org.levimc vers %1$s avant de continuer.
 
 Ce changement de stockage est nécessaire pour respecter les exigences de publication sur Google Play. L’ancien dossier restera intact, mais il ne sera plus utilisé après la migration.
 
@@ -181,11 +181,11 @@ La migration peut prendre du temps. Vous pouvez laisser l’application en arri�
 
 L’ancien dossier games/org.levimc n’a pas été supprimé et n’est plus utilisé.</string>
     <string name="storage_migration_partial_title">Migration incomplète</string>
-    <string name="storage_migration_partial_message">%1$d fichiers sur %2$d n’ont pas pu être copiés. La migration doit être terminée avant de continuer avec LeviLauncher.</string>
+    <string name="storage_migration_partial_message">%1$d fichiers sur %2$d n’ont pas pu être copiés. La migration doit être terminée avant de continuer avec Lua Client Mobile.</string>
     <string name="storage_migration_failed_title">Échec de la migration</string>
     <string name="storage_migration_failed_message">La migration ne peut pas continuer : %1$s
 
-La migration doit être terminée avant de continuer avec LeviLauncher.</string>
+La migration doit être terminée avant de continuer avec Lua Client Mobile.</string>
     <string name="migration_cleanup_title">Nettoyer le répertoire historique</string>
     <string name="migration_cleanup_desc">Supprimez l\'ancien répertoire games/org.levimc uniquement après avoir confirmé que toutes les instances se lancent normalement et qu\'aucun monde, pack de ressources, pack de comportement ou paramètre ne manque. Les données historiques supprimées ne pourront pas être restaurées depuis ce répertoire.</string>
     <string name="migration_cleanup_button">Nettoyer le répertoire historique</string>
@@ -210,8 +210,8 @@ La migration doit être terminée avant de continuer avec LeviLauncher.</string>
 
     <string name="error_no_browser">Aucun navigateur disponible</string>
 
-    <string name="eula_title">Accord de licence LeviLauncher</string>
-    <string name="eula_message"><b>Bienvenue sur LeviLauncher</b>\n\nEn utilisant ce logiciel, vous acceptez :\n\n• C\'est un lanceur Minecraft <b>non officiel</b>\n• Vous devez posséder une copie <b>sous licence</b> de Minecraft\n• Toute forme de piratage ou de triche est interdite\n• Les mods/packs de ressources sont utilisés à vos risques et périls\n• Non affilié à Mojang/Microsoft\n\nL\'utilisation continue vaut acceptation</string>
+    <string name="eula_title">Accord de licence Lua Client Mobile</string>
+    <string name="eula_message"><b>Bienvenue sur Lua Client Mobile</b>\n\nEn utilisant ce logiciel, vous acceptez :\n\n• C\'est un lanceur Minecraft <b>non officiel</b>\n• Vous devez posséder une copie <b>sous licence</b> de Minecraft\n• Toute forme de piratage ou de triche est interdite\n• Les mods/packs de ressources sont utilisés à vos risques et périls\n• Non affilié à Mojang/Microsoft\n\nL\'utilisation continue vaut acceptation</string>
     <string name="eula_agree">Accepter</string>
     <string name="eula_exit">Refuser</string>
 
@@ -439,7 +439,7 @@ La migration doit être terminée avant de continuer avec LeviLauncher.</string>
     <string name="ms_active_badge">Actif</string>
     <string name="ms_account_subtitle_format">ID utilisateur : %1$s • Mis à jour : %2$s</string>
     <string name="xbox_avatar">Avatar Xbox</string>
-    <string name="launcher_managed_mc_login">Connectez-vous à Minecraft avec LeviLauncher</string>
+    <string name="launcher_managed_mc_login">Connectez-vous à Minecraft avec Lua Client Mobile</string>
     <string name="dialog_title_login_required">Connexion requise</string>
     <string name="dialog_message_login_required">La connexion gérée est activée, mais aucun compte n\'est connecté. Allez dans Comptes.</string>
     <string name="go_to_accounts">Comptes</string>
@@ -644,15 +644,15 @@ La migration doit être terminée avant de continuer avec LeviLauncher.</string>
     <string name="vanilla_prefix">Vanilla %s</string>
 
     <string name="about_page_title">À propos</string>
-    <string name="about_subtitle">LeviLauncher — Un lanceur Minecraft Bedrock moderne</string>
+    <string name="about_subtitle">Lua Client Mobile — Un lanceur Minecraft Bedrock moderne</string>
     <string name="about_authors_title">👥 Auteurs et Mainteneurs</string>
     <string name="about_author_name">DreamGuXiang</string>
     <string name="about_author_badge">Auteur</string>
-    <string name="about_author_role">Auteurs de LeviLauncher</string>
+    <string name="about_author_role">Auteurs de Lua Client Mobile</string>
     <string name="about_afdian">Afdian</string>
     <string name="about_patreon">Patreon</string>
     <string name="about_source_title">Code Source et Open Source</string>
-    <string name="about_github_repo">GitHub · LeviLauncher</string>
+    <string name="about_github_repo">GitHub · Lua Client Mobile</string>
     <string name="about_github_org">LiteLDev</string>
     <string name="about_license_note">Voir LICENSE dans le dépôt pour plus de détails.</string>
     <string name="about_contribute_title">Contribuer</string>
@@ -662,7 +662,7 @@ La migration doit être terminée avant de continuer avec LeviLauncher.</string>
 
     <string-array name="launcher_tips">
         <item>Les Paramètres vous permettent d\'ajuster le thème, la couleur, le fond et d\'autres options.</item>
-        <item>LeviLauncher est open source. Utilisez GitHub issues pour signaler un problème.</item>
+        <item>Lua Client Mobile est open source. Utilisez GitHub issues pour signaler un problème.</item>
         <item>Utilisez la liste déroulante des versions pour changer d\'instance rapidement.</item>
         <item>Est-ce que les gens lisent vraiment ça ?</item>
         <item>Vous pouvez faire glisser les mods pour réorganiser leur priorité de chargement.</item>
@@ -770,7 +770,7 @@ La migration doit être terminée avant de continuer avec LeviLauncher.</string>
     <string name="delete_account_title">Supprimer le compte</string>
     <string name="delete_account_confirm">Voulez-vous vraiment supprimer ce compte ?</string>
     <string name="instance_backup_title">Sauvegarder l\'instance</string>
-    <string name="instance_backup_desc">Crée une sauvegarde complète de cette instance dans Download/LeviLauncher/Backups.</string>
+    <string name="instance_backup_desc">Crée une sauvegarde complète de cette instance dans Download/Lua Client Mobile/Backups.</string>
     <string name="instance_backup_button">Sauvegarder l\'instance</string>
     <string name="instance_backup_confirm_message">Créer maintenant une sauvegarde complète de cette instance ? Quittez d\'abord Minecraft s\'il est en cours d\'exécution afin d\'éviter toute modification de fichiers pendant la sauvegarde.</string>
     <string name="instance_backup_in_progress">Sauvegarde de l\'instance…</string>
@@ -809,9 +809,9 @@ La migration doit être terminée avant de continuer avec LeviLauncher.</string>
     <string name="ms_device_code_login_desc">Ouvrez une session privée du navigateur avec le code d\'appareil déjà rempli.</string>
     <string name="ms_webview_login">Ouvrir la connexion intégrée</string>
     <string name="ms_webview_option_title">WebView intégrée</string>
-    <string name="ms_webview_login_desc">Connectez-vous sans quitter LeviLauncher. Utilisez cette option lorsque le flux du navigateur n\'est pas disponible.</string>
+    <string name="ms_webview_login_desc">Connectez-vous sans quitter Lua Client Mobile. Utilisez cette option lorsque le flux du navigateur n\'est pas disponible.</string>
     <string name="ms_device_code_title">Se connecter avec un code d\'appareil</string>
-    <string name="ms_device_code_instructions">Ouvrez la page de connexion d\'appareil Microsoft, saisissez ce code, puis approuvez l\'accès. LeviLauncher terminera automatiquement.</string>
+    <string name="ms_device_code_instructions">Ouvrez la page de connexion d\'appareil Microsoft, saisissez ce code, puis approuvez l\'accès. Lua Client Mobile terminera automatiquement.</string>
     <string name="ms_device_code_label">Code d\'appareil Microsoft</string>
     <string name="ms_device_code_requesting">Demande d\'un code sécurisé…</string>
     <string name="ms_device_code_waiting_code">--------</string>
@@ -825,7 +825,7 @@ La migration doit être terminée avant de continuer avec LeviLauncher.</string>
     <string name="ms_device_code_copied">Code copié</string>
     <string name="ms_device_code_open_browser">Ouvrir la connexion Microsoft</string>
     <string name="ms_device_code_step_title">Terminez la connexion dans votre navigateur</string>
-    <string name="ms_device_code_browser_note">LeviLauncher ouvre votre navigateur par défaut dans une session privée, remplit automatiquement le code et demande une nouvelle connexion Microsoft.</string>
+    <string name="ms_device_code_browser_note">Lua Client Mobile ouvre votre navigateur par défaut dans une session privée, remplit automatiquement le code et demande une nouvelle connexion Microsoft.</string>
     <string name="ms_choose_other_method">Autre méthode</string>
     <string name="ms_no_browser">Aucun navigateur n\'est disponible sur cet appareil.</string>
     <string name="ms_default_browser_no_private_mode">Votre navigateur par défaut ne prend pas en charge la connexion privée. Mettez-le à jour ou utilisez la connexion WebView.</string>
@@ -833,7 +833,7 @@ La migration doit être terminée avant de continuer avec LeviLauncher.</string>
     <string name="ms_login_state_failed">La réponse de connexion Microsoft n\'a pas pu être vérifiée. Recommencez la connexion.</string>
     <string name="ms_login_missing_code">Microsoft n\'a pas renvoyé de code de connexion. Recommencez la connexion ou utilisez le code d\'appareil.</string>
     <string name="ms_feature_disabled_title">Fonction désactivée</string>
-    <string name="ms_feature_disabled_desc">Activez « Se connecter à Minecraft avec LeviLauncher » dans les paramètres pour gérer les comptes Microsoft.</string>
+    <string name="ms_feature_disabled_desc">Activez « Se connecter à Minecraft avec Lua Client Mobile » dans les paramètres pour gérer les comptes Microsoft.</string>
     <string name="ms_activated">Activé</string>
     <string name="inbuilt_mod_gyro">Gyroscope</string>
     <string name="inbuilt_mod_gyro_desc">Utilise le gyroscope de l\'appareil pour contrôler la rotation de la caméra</string>

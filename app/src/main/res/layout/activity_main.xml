@@ -158,16 +158,9 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="💡"
-                    android:textSize="14sp" />
-
-                <TextView
                     android:id="@+id/tip_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="6dp"
                     android:fontFamily="@font/misans"
                     android:textColor="@color/text_secondary"
                     android:textSize="12sp" />
@@ -588,6 +581,42 @@
                                 android:layout_weight="1"
                                 android:layout_marginStart="8dp"
                                 android:text="@string/quick_launch"
+                                android:fontFamily="@font/misans"
+                                android:textColor="@color/on_surface"
+                                android:textSize="13sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="›"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/misc_export_logs_row"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:paddingVertical="8dp"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="?attr/selectableItemBackground">
+
+                            <ImageView
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:src="@drawable/ic_logs"
+                                android:scaleType="fitCenter"
+                                app:tint="@color/primary" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_marginStart="8dp"
+                                android:text="@string/lua_export_logs"
                                 android:fontFamily="@font/misans"
                                 android:textColor="@color/on_surface"
                                 android:textSize="13sp" />

@@ -1,0 +1,15 @@
+Lua Client Mobile
+Copyright 2026 Kauan
+
+This product is based on LeviLaunchroid:
+https://github.com/LiteLDev/LeviLaunchroid
+
+LeviLaunchroid is maintained by LiteLDev/LeviMC and its contributors and is
+licensed under the Apache License, Version 2.0. The original copyright,
+license, repository history, and contributor attribution are preserved.
+
+Lua Client Mobile includes modifications for branding, local diagnostics,
+Android ARM64 native initialization, safe module defaults, and release builds.
+
+Minecraft is a trademark of Microsoft/Mojang. This project is unofficial and
+does not distribute Minecraft.

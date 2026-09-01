@@ -535,7 +535,7 @@ public class HudOverlay extends View {
                     }
                     paint.setStyle(Paint.Style.STROKE);
                     paint.setStrokeWidth(2f);
-                    paint.setColor(0xFF4AE0A0);
+                    paint.setColor(0xFF3D8BFF);
                     canvas.drawRect(bounds.left - 2, bounds.top - 2, bounds.right + 2, bounds.bottom + 2, paint);
                 }
             }
