@@ -117,10 +117,22 @@ class MinecraftActivity : MainActivity(), PojavControlsHost {
             returnToLauncherAfterLaunchFailure()
             return
         }
-        trace.mark("Native mod enable started")
-        ModManager.enableLoadedMods()
-        trace.mark("Native mod enable finished")
-        LuaLogManager.record("modules", "Carregamento de modulos concluido")
+        val compatibilitySafeMode = intent.getBooleanExtra(
+            MinecraftRuntimePreparer.EXTRA_COMPATIBILITY_SAFE_MODE,
+            false
+        )
+        if (compatibilitySafeMode) {
+            trace.mark("Native mod enable skipped", "compatibility safe mode")
+            LuaLogManager.record(
+                "safety",
+                "Modo de compatibilidade ativo: gxcore e modulos nativos adicionais ignorados"
+            )
+        } else {
+            trace.mark("Native mod enable started")
+            ModManager.enableLoadedMods()
+            trace.mark("Native mod enable finished")
+            LuaLogManager.record("modules", "Carregamento de modulos concluido")
+        }
         trace.mark("Mojang MainActivity super.onCreate starting")
         try {
             gameRuntimeStarted = true

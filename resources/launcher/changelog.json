@@ -1,22 +1,22 @@
 {
   "schemaVersion": 1,
-  "headline": "Lua Client Mobile v0.1.1",
-  "summary": "Correcao de inicializacao e diagnostico para Minecraft 1.26.45.",
+  "headline": "Lua Client Mobile v0.1.2",
+  "summary": "Modo de compatibilidade para Android 15 e Minecraft 1.26.45.x.",
   "sections": [
     {
       "title": "Correcoes",
       "items": [
         {
-          "text": "Adicionado modo seguro que desativa hooks nativos antes do primeiro teste."
+          "text": "O diagnostico da v0.1.1 confirmou o fechamento durante o bootstrap da libgxcore.so."
         },
         {
-          "text": "O hook de giroscopio agora so e preparado quando o modulo estiver ativado."
+          "text": "No Android 15 ou superior com Minecraft 1.26.45.x, o gxcore e modulos nativos adicionais sao ignorados para permitir uma inicializacao segura."
         },
         {
-          "text": "O FPS nativo foi bloqueado na Minecraft 1.26.45 ate validacao em aparelho."
+          "text": "O menu e os overlays Java continuam disponiveis no modo de compatibilidade."
         },
         {
-          "text": "As etapas de inicializacao agora ficam salvas e o fechamento inesperado e recuperado na proxima abertura."
+          "text": "A exportacao de diagnostico agora inclui o ultimo tombstone nativo quando ele estiver disponivel."
         }
       ]
     }
